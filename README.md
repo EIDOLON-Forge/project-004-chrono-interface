@@ -1,54 +1,289 @@
-# EIDOLON — Project #004: Digital Pulse
+# EIDOLON — Project #004: CHRONO INTERFACE
 
-A futuristic real-time digital clock built from scratch using Python and Pygame.
+> A futuristic interactive clock interface built with Python and Pygame.
 
-This is Project #004 in the EIDOLON 500+ project journey.
+CHRONO INTERFACE transforms a simple digital clock into a futuristic HUD-style interface with a circular seconds system, animated particles, multiple themes, procedural audio, and interactive controls.
 
-## About
+## Project Information
 
-Digital Pulse transforms a simple system clock into a visual experiment.
-
-The project combines real-time time data with animated typography, particles, pulsing effects, and procedural audio.
-
-The goal is not simply to display the time, but to make something visually satisfying from a very simple programming concept.
+| Property | Details | 
+ | ----- | ----- | 
+| Project | #004 | 
+| Name | CHRONO INTERFACE | 
+| Language | Python | 
+| Framework | Pygame | 
+| Category | Creative Coding / Interactive UI / Visualization | 
+| Difficulty | Beginner → Intermediate | 
 
 ## Features
 
-- Real-time system clock
-- Animated digital display
-- Glowing typography
-- Particle background
-- Second-based pulse animation
-- Procedural sound effects
-- Start screen
-- 3-2-1 countdown
-- 60 FPS rendering
+* Real-time digital clock
 
-## Concepts
+* 12-hour / 24-hour mode
 
-This project explores:
+* Circular 60-second progress ring
 
-- Python loops
-- Functions
-- Classes
-- Real-time data
-- Date and time handling
-- Animation
-- Timed events
-- Particle systems
-- Alpha transparency
-- Procedural audio
-- Basic interpolation
-- Pygame rendering
+* Animated background particles
+
+* Futuristic grid interface
+
+* Dark glass-style clock panel
+
+* Multiple visual themes
+
+* Mouse parallax
+
+* Interactive UI controls
+
+* Date display
+
+* Pause mode
+
+* Audio controls
+
+* Procedurally generated sound effects
+
+* Startup countdown sequence
+
+* Futuristic system-status indicators
+
+## Visual Themes
+
+CHRONO INTERFACE includes three built-in themes.
+
+### EIDOLON
+
+The default green monochrome interface.
+
+### ICE
+
+A cool blue futuristic interface.
+
+### AMBER
+
+A warm amber interface.
+
+*Press `C` to cycle between themes.*
+
+## Controls
+
+| Input | Action | 
+ | ----- | ----- | 
+| `SPACE` | Pause / resume visual animation | 
+| `M` | Mute / unmute audio | 
+| `D` | Show / hide date | 
+| `C` | Change theme | 
+| `ESC` | Exit | 
+| Click clock | Toggle 12/24-hour format | 
+| Click seconds ring | Show / hide seconds | 
+
+## How It Works
+
+### Digital Clock
+
+The current system time is obtained using Python's `datetime` module.
+
+The interface displays:
+
+```
+HH:MM:SS
+
+```
+
+or:
+
+```
+HH:MM
+
+```
+
+depending on whether seconds are enabled.
+
+### Circular Seconds Ring
+
+The outer interface represents 60 seconds as a complete circle.
+The current second is converted into a progress value:
+
+```
+progress = seconds / 60.0
+
+```
+
+The progress is then converted into an angle to draw the active portion of the ring.
+
+### Particle System
+
+The background contains lightweight animated particles.
+Each particle maintains:
+
+* `x`
+
+* `y`
+
+* `speed`
+
+* `size`
+
+* `alpha`
+
+* `phase`
+
+Particles continuously move through the interface while their opacity subtly changes over time.
+
+### Mouse Parallax
+
+The position of the mouse affects the interface slightly.
+The main visual elements move by a small amount based on the mouse position, creating a subtle depth effect.
+
+### Interactive UI State
+
+The application maintains several runtime states:
+
+* theme
+
+* 12/24-hour mode
+
+* date visibility
+
+* seconds visibility
+
+* audio state
+
+* pause state
+
+Keyboard and mouse events modify these states while the application is running.
+
+### Procedural Audio
+
+The project generates its own audio effects programmatically.
+The generated sounds are:
+
+* `tick.wav`
+
+* `start.wav`
+
+* `countdown.wav`
+
+The sounds are created using Python's `wave`, `struct`, and `math` modules. No external sound files are required for the interface effects.
+
+### Startup Sequence
+
+When launched, the project displays:
+
+```
+CHRONO
+INTERFACE
+
+PRESS SPACE TO INITIALIZE
+
+```
+
+Pressing `SPACE` starts:
+
+```
+3
+2
+1
+GO
+
+```
+
+before entering the main interface.
 
 ## Technologies
 
-- Python
-- Pygame
+* Python 3
+
+* Pygame
+
+* `datetime`
+
+* `math`
+
+* `random`
+
+* `wave`
+
+* `struct`
 
 ## Installation
 
 Clone the repository:
 
-```bash
-git clone https://github.com/EIDOLON-Forge/project-004-digital-pulse.git
+```
+git clone https://github.com/EIDOLON-Forge/project-004-chrono-interface.git
+
+```
+
+Enter the project:
+
+```
+cd project-004-chrono-interface
+
+```
+
+Create a virtual environment:
+
+```
+python -m venv .venv
+
+```
+
+Activate it:
+
+**Git Bash**
+
+```
+source .venv/Scripts/activate
+
+```
+
+**PowerShell**
+
+```
+.\.venv\Scripts\Activate.ps1
+
+```
+
+Install Pygame:
+
+```
+pip install pygame
+
+```
+
+Run:
+
+```
+python main.py
+
+```
+
+## Project Structure
+
+```
+project-004-chrono-interface/
+│
+├── main.py
+├── README.md
+├── LICENSE
+├── .gitignore
+│
+├── tick.wav
+├── start.wav
+└── countdown.wav
+
+```
+
+*The WAV files are generated by the application when audio is available.*
+
+## License
+
+This project is licensed under the MIT License.
+See `LICENSE` for details.
+
+**EIDOLON**
+
+Project #004 — CHRONO INTERFACE
+
+*Build. Experiment. Break. Repeat.*
